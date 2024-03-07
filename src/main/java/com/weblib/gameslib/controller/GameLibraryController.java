@@ -36,7 +36,7 @@ public class GameLibraryController {
       return "gameAdd.html";
   }
 
-  @GetMapping("/gameAdd")
+  @PostMapping("/gameAdd")
   public String submitGameAdd() {
       return "gameDetail.html";
   }
@@ -47,7 +47,7 @@ public class GameLibraryController {
       return "gameUpdate.html";
   }
 
-  @GetMapping("/gameUpdate")
+  @PostMapping("/gameUpdate")
   public String submitGameUpdate() {
       return "gameDetail.html";
   }
