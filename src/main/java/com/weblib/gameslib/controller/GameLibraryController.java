@@ -13,41 +13,41 @@ public class GameLibraryController {
   // All GameList
   @GetMapping("/gameList")
   public String getGameList(Model model) {
-      return "gameList.html";
+      return "gameList";
   }
   
   // One Game Detail
   @GetMapping("/gameDetail")
   public String getGameDetail() {
-      return "gameDetail.html";
+      return "gameDetail";
   }
   
   // Search by Title
   @GetMapping("/title")
   public String getGameByTitle() {
-      return "gameList.html";
+      return "gameList";
   }
   
   // Add Game
   @GetMapping("/gameAdd")
   public String getGameAddForm() {
-      return "gameAdd.html";
+      return "gameAdd";
   }
 
   @PostMapping("/gameAdd")
   public String submitGameAdd() {
-      return "gameDetail.html";
+      return "gameDetail";
   }
   
   // Update Game
   @GetMapping("/gameUpdate")
   public String getGameUpdateForm() {
-      return "gameUpdate.html";
+      return "gameUpdate";
   }
 
   @PostMapping("/gameUpdate")
   public String submitGameUpdate() {
-      return "gameDetail.html";
+      return "gameDetail";
   }
   // Delete Game
   @GetMapping("/gameDelete")

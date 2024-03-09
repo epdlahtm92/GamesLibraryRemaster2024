@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link th:href="@{bootstrap.min.css}" rel="stylesheet">
     <title>Header</title>
 </head>
 <body>
+	<header th:fragment="header">
     <nav class="navbar navbar-expand navbar-dark bg-dark" style="margin-bottom: 50px; padding-right:45px;">
       <div class="container" style="margin-left: 10px; margin-right: 10px; display: flex;">
 				<div class="navbar-header">
@@ -17,8 +17,8 @@
 					<a class="navbar-brand" th:href="@{/home}">신규 등록</a>
 					<a class="navbar-brand" th:href="@{/home}">게시판</a> 
 				</div>
-			</div>
-		</div>    
+			</div>    
     </nav>
+	</header>
 </body>
 </html>
