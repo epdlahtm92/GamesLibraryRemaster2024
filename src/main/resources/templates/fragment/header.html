@@ -7,6 +7,34 @@
 </head>
 <body>
 	<header th:fragment="header">
+		<div class="jumbotron"
+				style="height: 200px; background-color: black; padding: 45px; display: flex; margin-bottom: 0px; border-radios: 0px;">
+			<div class="container" style="width: 350px; margin-left: 0px; width: 450px;">
+				<span>
+					<a href="${ pageContext.request.contextPath }/all">
+						<img height="100px" src="${ pageContext.request.contextPath }/resources/img/jumbotronBackgroundImg.gif">
+					</a>
+				</span>
+				<span style="display: inline-block; height: 85px; font-size: 2.5em; color: white; font-weight: bold; margin-top: 25px; text-align: center; vertical-align: middle;">
+					<a style="color: white; text-decoration: none"
+						href="${ pageContext.request.contextPath }/all">GAME LIBRARY</a>
+				</span>
+			</div>
+			<form class="form-inline" action="${ pageContext.request.contextPath }/title" method="get">
+				<div class="form-group mx-sm-3 mb-2">
+					<div class="dropdown">
+						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">검색설정</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</div>
+					<input type="text" class="form-control" name="gameTitle" >
+				</div>
+				<button type="submit" class="btn btn-primary mb-2">검색</button>
+			</form>
+	</div>
     <nav class="navbar navbar-expand navbar-dark bg-dark" style="margin-bottom: 50px; padding-right:45px;">
       <div class="container" style="margin-left: 10px; margin-right: 10px; display: flex;">
 				<div class="navbar-header">
