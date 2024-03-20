@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/defaultLayout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamesLibrary</title>
+</head>
+<body>
+  <div layout:fragment="content">
+      <div class="container">
+        <div class="container" style="margin-bottom:70px;">
+          <div class="row">
+            <div class="col -md-4">
+              <h3><c:out value="${ game.title }" /></h3>
+              <p><b>게임 코드 : </b><span class="badge badge-info"><c:out value="${ game.gameId }" /></span>
+              <p><b>개 발 사 : </b><c:out value="${ game.developer } | ${ game.developerCountry }" />
+              <p><b>배 급 사 : </b><c:out value="${ game.publisher } | ${ game.publisherCountry }" />
+              <p><b>장   르 : </b><c:out value="${ game.genre }" />
+              <p><b>출 시 일 : </b><c:out value="${ game.releaseDate }" />
+              <p><b>상세 설명 : </b><c:out value="${ game.description }" />
+              <h4><c:out value="${ game.priceToString }" /></h4>
+              <br />
+              <p><a href="#" class="btn btn-primary">게임 주문 &raquo;</a>
+                 <a href="<c:url value="./all"/>"class="btn btn-secondary">게임 목록 &raquo;</a>
+                 <sec:authorize access="hasAuthority('ROLE_ADMIN')" var="isAdmin" ></sec:authorize>
+                   <c:choose>
+                     <c:when test="${ isAdmin }">
+                       <a href="<c:url value="./admin/updateGame?gameId=${ game.gameId }"/>"class="btn btn-warning">수정하기 &raquo;</a>
+                       <a href="<c:url value="./admin/delete?gameId=${ game.gameId }"/>"class="btn btn-danger">삭제하기 &raquo;</a>
+                     </c:when>
+                   </c:choose>
+            </div>
+            <div class="col -md-6">
+              <img style="position: absolute; top:0; left:0; width:100%;" src="${ pageContext.request.contextPath }/resources/imageFiles/${ game.imgPath }" alt="사진 없음" />
+            </div>
+          </div>
+          <c:set var="category" value="game" />
+        </div>
+      </div>
+  </div>
+</body>
+</html>
